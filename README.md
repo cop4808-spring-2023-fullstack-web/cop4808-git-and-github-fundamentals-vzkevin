@@ -10,3 +10,5 @@ added three new buttons on top of original buttons
     - √ (square root)  
       
 all with a style color green and bold font  
+
+![Animation](https://user-images.githubusercontent.com/100811318/216887899-6ab4c3a4-5b85-458c-a329-c0eeb8ac6f9a.gif)
