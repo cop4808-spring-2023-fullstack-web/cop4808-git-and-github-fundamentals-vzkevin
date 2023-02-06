@@ -45,7 +45,8 @@ function clickButton() {
                 clearDisplay();
                 updateDisplay();
             } else if (buttons[i].classList.contains('newx')) {
-                displayValue = Math.pow(displayValue, 2);
+                //power function 
+                displayValue = powe(displayValue, 2);
                 updateDisplay();
             } else if (buttons[i].classList.contains('newex')) {
                 displayValue = factorial(displayValue);
@@ -65,15 +66,22 @@ function clickButton() {
 
 clickButton();
 
+// new squar root function
+function powe(number, x) {
+    return Math.pow(number, x);
+  }
+
+// new squar root function
 function sqrt(number) {
     return Math.sqrt(number);
   }
 
+  //just diplay pi
 function displayPi() {
     return Math.PI.toFixed(6);
   }
 
-
+//calculate factorial of the currunt displayed number
 function factorial(num) {
     let result = 1;
     for (let i = 1; i <= num; i++) {
