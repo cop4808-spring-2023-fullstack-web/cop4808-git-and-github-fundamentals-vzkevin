@@ -110,7 +110,22 @@ button {
 }
 
 /* new style we are using with green color and bold font*/
-.new {
+.newx {
+    background-color: #00a000;
+    font-weight: bold;    
+}
+
+.newsq {
+    background-color: #00a000;
+    font-weight: bold;    
+}
+
+.newpi {
+    background-color: #00a000;
+    font-weight: bold;    
+}
+
+.newex {
     background-color: #00a000;
     font-weight: bold;    
 }

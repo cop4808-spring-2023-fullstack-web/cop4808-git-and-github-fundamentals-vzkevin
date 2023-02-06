@@ -22,33 +22,65 @@ function updateDisplay() {
 updateDisplay();
 
 function clickButton() {
-    for(let i = 0; i < buttons.length; i++) {
+    for (let i = 0; i < buttons.length; i++) {
         buttons[i].addEventListener('click', function() {
-            if(buttons[i].classList.contains('operand')) {
+            if (buttons[i].classList.contains('operand')) {
                 inputOperand(buttons[i].value);
                 updateDisplay();
-            } else if(buttons[i].classList.contains('operator')) {
+            } else if (buttons[i].classList.contains('operator')) {
                 inputOperator(buttons[i].value);
-            } else if(buttons[i].classList.contains('equals')) {
+            } else if (buttons[i].classList.contains('equals')) {
                 inputEquals();
                 updateDisplay();
-            } else if(buttons[i].classList.contains('decimal')) {
+            } else if (buttons[i].classList.contains('decimal')) {
                 inputDecimal(buttons[i].value);
                 updateDisplay();
-            } else if(buttons[i].classList.contains('percent')) {
+            } else if (buttons[i].classList.contains('percent')) {
                 inputPercent(displayValue);
                 updateDisplay();
-            } else if(buttons[i].classList.contains('sign')) {
+            } else if (buttons[i].classList.contains('sign')) {
                 inputSign(displayValue);
                 updateDisplay();
-            } else if(buttons[i].classList.contains('clear'))
+            } else if (buttons[i].classList.contains('clear')) {
                 clearDisplay();
                 updateDisplay();
-        }
-    )}
+            } else if (buttons[i].classList.contains('newx')) {
+                displayValue = Math.pow(displayValue, 2);
+                updateDisplay();
+            } else if (buttons[i].classList.contains('newex')) {
+                displayValue = factorial(displayValue);
+                updateDisplay();
+            }
+            else if (buttons[i].classList.contains('newpi')) {
+                displayValue = displayPi();
+                updateDisplay();
+            }
+            else if (buttons[i].classList.contains('newsq')) {
+                displayValue = sqrt(displayValue);
+                updateDisplay();
+            }
+        });
+    }
 }
 
 clickButton();
+
+function sqrt(number) {
+    return Math.sqrt(number);
+  }
+
+function displayPi() {
+    return Math.PI.toFixed(6);
+  }
+
+
+function factorial(num) {
+    let result = 1;
+    for (let i = 1; i <= num; i++) {
+      result *= i;
+    }
+    return result;
+  }
 
 function inputOperand(operand) {
     if(firstOperator === null) {
